@@ -1,0 +1,141 @@
+[
+    {
+        "id": "f3000-6x4",
+        "name": "SHACMAN F3000 6X4 DUMP Truck",
+        "nameZh": "陕汽F3000 6X4自卸车",
+        "description": "Professional heavy-duty dump truck with powerful WEICHAI engine and reliable performance",
+        "descriptionZh": "专业重型自卸车，配备潍柴强劲发动机，性能可靠",
+        "imgFolder": "F3000_6x4",
+        "headImg": "微信图片_20240603164229.jpg",
+        "detailImgs": [
+            "微信图片_20240603164229.jpg",
+            "微信图片_20240603164251.jpg",
+            "微信图片_20240603164256.jpg",
+            "微信图片_20240603164301.jpg",
+            "微信图片_20240603164306.jpg",
+            "微信图片_20240603164310.jpg",
+            "微信图片_20240603164315.jpg",
+            "微信图片_20240603164320.jpg"
+        ],
+        "specifications": {
+            "model": "SX3255DT404",
+            "engine": "WEICHAI WP10.380E22",
+            "power": "380HP",
+            "transmission": "FAST 12JSD200T-B",
+            "wheelbase": "3975+1400mm",
+            "maxSpeed": "75km/h",
+            "cargoBox": "5800×2300×1500mm"
+        }
+    },
+    {
+        "id": "h3000-6x4",
+        "name": "SHACMAN H3000 6X4 DUMP Truck",
+        "nameZh": "陕汽H3000 6X4自卸车",
+        "description": "Advanced H3000 series with superior fuel efficiency and comfortable cabin design",
+        "descriptionZh": "先进H3000系列，卓越燃油效率，舒适驾驶室设计",
+        "imgFolder": "H3000_6x4",
+        "headImg": "微信图片_20240603165835.jpg",
+        "detailImgs": [
+            "微信图片_20240603165835.jpg",
+            "微信图片_20240603165854.jpg",
+            "微信图片_20240603165859.jpg",
+            "微信图片_20240603165904.jpg",
+            "微信图片_20240603165908.jpg",
+            "微信图片_20240603165913.jpg",
+            "微信图片_20240603165917.jpg",
+            "微信图片_20240603165921.jpg",
+            "微信图片_20240603165925.jpg"
+        ],
+        "specifications": {
+            "model": "SX3255MN384",
+            "engine": "WEICHAI WP12.400E50",
+            "power": "400HP",
+            "transmission": "FAST 12JSD200T-B",
+            "wheelbase": "3775+1400mm",
+            "maxSpeed": "80km/h",
+            "cargoBox": "5600×2300×1500mm"
+        }
+    },
+    {
+        "id": "h3000-8x4",
+        "name": "SHACMAN H3000 8X4 DUMP Truck",
+        "nameZh": "陕汽H3000 8X4自卸车",
+        "description": "Heavy-duty 8x4 configuration for maximum payload capacity and stability",
+        "descriptionZh": "重型8x4配置，最大载重能力和稳定性",
+        "imgFolder": "H3000_8x4",
+        "headImg": "微信图片_20240603170139.jpg",
+        "detailImgs": [
+            "微信图片_20240603170139.jpg",
+            "微信图片_20240603170149.jpg",
+            "微信图片_20240603170153.jpg"
+        ],
+        "specifications": {
+            "model": "SX3318MT366",
+            "engine": "WEICHAI WP12.430E50",
+            "power": "430HP",
+            "transmission": "FAST 12JSD200T-B",
+            "wheelbase": "1800+3575+1400mm",
+            "maxSpeed": "80km/h",
+            "cargoBox": "7600×2300×1500mm"
+        }
+    },
+    {
+        "id": "x3000-6x4",
+        "name": "SHACMAN X3000 6X4 DUMP Truck",
+        "nameZh": "陕汽X3000 6X4自卸车",
+        "description": "Premium X3000 series with cutting-edge technology and exceptional performance",
+        "descriptionZh": "高端X3000系列，尖端技术，卓越性能",
+        "imgFolder": "X3000_6x4",
+        "headImg": "微信图片_20240603162139.jpg",
+        "detailImgs": [
+            "微信图片_20240603162139.jpg",
+            "微信图片_20240603162150.jpg",
+            "微信图片_20240603162156.jpg",
+            "微信图片_20240603162201.jpg",
+            "微信图片_20240603162206.jpg",
+            "微信图片_20240603162244.jpg",
+            "微信图片_20240603162259.jpg",
+            "微信图片_20240603162316.jpg"
+        ],
+        "specifications": {
+            "model": "SX32556T404",
+            "engine": "WEICHAI WP12.430E50",
+            "power": "430HP",
+            "transmission": "FAST 12JSD200T-B",
+            "wheelbase": "3775+1400mm",
+            "maxSpeed": "80km/h",
+            "cargoBox": "5600×2300×1500mm"
+        }
+    },
+    {
+        "id": "x3000-8x4",
+        "name": "SHACMAN X3000 8X4 DUMP Truck",
+        "nameZh": "陕汽X3000 8X4自卸车",
+        "description": "Ultimate heavy-duty 8x4 dump truck with maximum payload and advanced features",
+        "descriptionZh": "终极重型8x4自卸车，最大载重，先进功能",
+        "imgFolder": "X3000_8x4",
+        "headImg": "微信图片_20240603163943.jpg",
+        "detailImgs": [
+            "微信图片_20240603163943.jpg",
+            "微信图片_20240603164005.jpg",
+            "微信图片_20240603164019.jpg",
+            "微信图片_20240603164048.jpg",
+            "微信图片_20240603164053.jpg",
+            "微信图片_20240603164059.jpg",
+            "微信图片_20240603164104.jpg",
+            "微信图片_20240603164109.jpg",
+            "微信图片_20240603164114.jpg",
+            "微信图片_20240603164130.jpg",
+            "微信图片_20240603164134.jpg"
+        ],
+        "specifications": {
+            "model": "SX33186V386",
+            "engine": "WEICHAI WP12.460E50",
+            "power": "460HP",
+            "transmission": "FAST 12JSD200T-B",
+            "wheelbase": "1800+3575+1400mm",
+            "maxSpeed": "80km/h",
+            "cargoBox": "8200×2300×1500mm"
+        }
+    }
+]

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - SHACMAN Heavy Duty Trucks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #0055a5;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .product-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .thumbnail-images {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .thumbnail:hover {
+            border-color: #0055a5;
+        }
+
+        .product-info {
+            text-align: left;
+        }
+
+        .product-info h1 {
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .product-info p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .specifications {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .specifications h3 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .specifications ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .specifications li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .specifications li:last-child {
+            border-bottom: none;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #0055a5;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background: #003366;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .error {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+            color: #d32f2f;
+        }
+
+        @media (max-width: 900px) {
+            .product-detail {
+                padding: 10px;
+            }
+            
+            .main-image {
+                height: 250px;
+            }
+        }
+    </style>
+    <script src="lang.js"></script>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 40px 0 0; background: #000; color: #fff; padding: 10px; border-radius: 6px;">
+        <div>
+            <span>Email: <a href="mailto:info@example.com" style="color: #fff; text-decoration: underline;">info@example.com</a></span>
+            <span style="margin-left: 15px;">Tel: <a href="tel:+1234567890" style="color: #fff; text-decoration: underline;">+1234567890</a></span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a href="https://fenghancar.en.alibaba.com/?spm=a2700.29482153.0.0.78a471d2Ywbebu" target="_blank" style="background: #ff6b35; color: #fff; padding: 8px 16px; text-decoration: none; border-radius: 4px;">Online Store</a>
+            <button onclick="setLang('en')" style="background: #222; color: #fff; border: none; padding: 6px 14px; border-radius: 4px; margin-left: 20px;">English</button>
+            <button onclick="setLang('zh')" style="background: #222; color: #fff; border: none; padding: 6px 14px; border-radius: 4px; margin-left: 8px;">中文</button>
+        </div>
+    </div>
+
+    <header>
+        <h1 id="header-title">Product Details</h1>
+        <p id="header-desc">Professional Heavy Duty Truck Solutions</p>
+    </header>
+
+    <div class="container">
+        <div class="product-detail" id="product-detail">
+            <div class="loading">Loading product details...</div>
+        </div>
+    </div>
+
+    <footer>
+        <span id="footer">© 2024 SHACMAN Heavy Duty Trucks. All rights reserved.</span>
+    </footer>
+
+    <script>
+        // 获取URL参数
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // 加载产品详情
+        async function loadProductDetail() {
+            const productId = getQueryParam('id');
+            const container = document.getElementById('product-detail');
+            
+            if (!productId) {
+                container.innerHTML = '<div class="error">Product ID not found</div>';
+                return;
+            }
+
+            try {
+                const response = await fetch('products.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load products');
+                }
+                
+                const products = await response.json();
+                const product = products.find(p => p.id === productId);
+                
+                if (!product) {
+                    container.innerHTML = '<div class="error">Product not found</div>';
+                    return;
+                }
+                
+                displayProductDetail(product);
+            } catch (error) {
+                container.innerHTML = '<div class="error">Error loading product details. Please try again later.</div>';
+                console.error('Error loading product details:', error);
+            }
+        }
+
+        // 显示产品详情
+        function displayProductDetail(product) {
+            const container = document.getElementById('product-detail');
+            const lang = localStorage.getItem('lang') || 'en';
+            const name = lang === 'zh' ? product.nameZh : product.name;
+            const description = lang === 'zh' ? product.descriptionZh : product.description;
+
+            const specs = product.specifications;
+            
+            container.innerHTML = `
+                <div class="product-images">
+                    <img src="img/${product.imgFolder}/${product.headImg}" alt="${name}" class="main-image" id="main-image">
+                    <div class="thumbnail-images">
+                        ${product.detailImgs.map(img => `
+                            <img src="img/${product.imgFolder}/${img}" alt="${name}" class="thumbnail" onclick="changeMainImage(this.src)">
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <h1>${name}</h1>
+                    <p>${description}</p>
+                    
+                    <div class="specifications">
+                        <h3>Specifications</h3>
+                        <ul>
+                            <li><strong>Model:</strong> ${specs.model}</li>
+                            <li><strong>Engine:</strong> ${specs.engine}</li>
+                            <li><strong>Power:</strong> ${specs.power}</li>
+                            <li><strong>Transmission:</strong> ${specs.transmission}</li>
+                            <li><strong>Wheelbase:</strong> ${specs.wheelbase}</li>
+                            <li><strong>Max Speed:</strong> ${specs.maxSpeed}</li>
+                            <li><strong>Cargo Box:</strong> ${specs.cargoBox}</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="index.html" class="back-button">← Back to Products</a>
+                </div>
+            `;
+        }
+
+        // 切换主图片
+        function changeMainImage(src) {
+            document.getElementById('main-image').src = src;
+        }
+
+        // 页面加载时加载产品详情
+        document.addEventListener('DOMContentLoaded', loadProductDetail);
+    </script>
+</body>
+</html>
