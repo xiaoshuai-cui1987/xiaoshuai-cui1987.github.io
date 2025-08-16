@@ -1,7 +1,7 @@
 const langData = {
     en: {
         title: "SHACMAN Heavy Duty Trucks",
-        headerTitle: "SHACMAN Heavy Duty Automobile Import & Export Co., Ltd.",
+        headerTitle: "Shaanxi Fenghan Trading Co.,Ltd.",
         headerDesc: "Professional Exporter of Shaanxi Heavy Duty Trucks",
         navProducts: "Products",
         navAbout: "About Us",
@@ -16,7 +16,7 @@ const langData = {
         product3Title: "SHACMAN F3000 6X4 DUMP Truck",
         product3Link: "Read More",
         aboutTitle: "About Us",
-        aboutDesc: "Shaanxi Hexin Shenghua Trading Co., Ltd. is a globally authorized export enterprise of Shaanxi Automobile Heavy Truck, exporting products such as dump trucks, tractors, mixer trucks, truck mounted cranes, mining vehicles, etc. Our core business is customized export services for complete vehicles, radiating to more than 60 countries. We specialize in vehicle customization, military quality, and professional exports.",
+        aboutDesc: "Shaanxi Fenghan Trading Co.,Ltd. is a globally authorized export enterprise of Shaanxi Automobile Heavy Truck, exporting products such as dump trucks, tractors, mixer trucks, truck mounted cranes, mining vehicles, etc. Our core business is customized export services for complete vehicles, radiating to more than 60 countries. We specialize in vehicle customization, military quality, and professional exports.",
         aboutDesc2: "Our main business includes: Shaanxi Heavy Duty Automobile (Shacman) dump trucks, tractor trucks, concrete mixer trucks, truck cranes, mining trucks and other special vehicles for export trade.",
         servicesTitle: "Customization & Services",
         servicesDesc: "We provide precise development and refined marketing in product layout, fully meeting customers' differentiated needs. Our professional after-sales service system ensures reliable quality and coverage for all service stations.",
