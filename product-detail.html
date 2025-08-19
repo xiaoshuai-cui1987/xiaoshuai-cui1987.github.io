@@ -167,10 +167,10 @@
     <script src="lang.js"></script>
 </head>
 <body>
-    <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 40px 0 0; background: #000; color: #fff; padding: 10px; border-radius: 6px;">
-        <div>
-            <span>Email: <a href="mailto:info@example.com" style="color: #fff; text-decoration: underline;">info@example.com</a></span>
-            <span style="margin-left: 15px;">Tel: <a href="tel:+1234567890" style="color: #fff; text-decoration: underline;">+1234567890</a></span>
+    <div style="display: flex; justify-content: space-between; align-items: center; background: #000; color: #fff; padding: 10px 20px;">
+        <div id="contact-info">
+            <span>Email: info@example.com</span>
+            <span style="margin-left: 15px;">Tel: +1234567890</span>
         </div>
         <div style="display: flex; align-items: center; gap: 15px;">
             <a href="https://fenghancar.en.alibaba.com/?spm=a2700.29482153.0.0.78a471d2Ywbebu" target="_blank" style="background: #ff6b35; color: #fff; padding: 8px 16px; text-decoration: none; border-radius: 4px;">Online Store</a>
@@ -199,6 +199,28 @@
         function getQueryParam(name) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
+        }
+
+        // 加载联系信息
+        async function loadContactInfo() {
+            try {
+                const response = await fetch('contact-info.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load contact info');
+                }
+                
+                const contactInfo = await response.json();
+                
+                const contactInfoElement = document.getElementById('contact-info');
+                if (contactInfoElement) {
+                    contactInfoElement.innerHTML = `
+                        <span>Email: ${contactInfo.email}</span>
+                        <span style="margin-left: 15px;">Tel: ${contactInfo.tel}</span>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading contact info:', error);
+            }
         }
 
         // 加载产品详情
@@ -279,7 +301,10 @@
         }
 
         // 页面加载时加载产品详情
-        document.addEventListener('DOMContentLoaded', loadProductDetail);
+        document.addEventListener('DOMContentLoaded', function() {
+            loadContactInfo();
+            loadProductDetail();
+        });
     </script>
 </body>
 </html>
